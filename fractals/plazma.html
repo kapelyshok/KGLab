@@ -1,0 +1,112 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Fractal</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<!-- Google Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+	<!-- JQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.min.js"></script>
+	<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <br>
+    	<div class="row">
+    		<div class="col-md-4 card card-body bg-light">
+
+    			<button type="button" class="btn rounded-pill disabled" style="background: #252525;color:white;">
+    				Плазма
+    			</button>
+    			<button type="button" onclick="location.href='brownian.html';" class="btn red rounded-pill">
+    				Броунівський рух
+				</button>
+                <div class="container bg-light">
+					<div class="row ">
+						<div class="col bg-light h6">
+							Колірна схема фракталу
+						</div>
+					</div>
+					<div  style="margin-top:15px;">
+						<div class="form-check">
+							<input type="color" name="exampleRadios" id="TopLeft" value="#ffff02" onchange="beginning()">
+							<label class="form-check-label" for="monochromeScheme">
+								Верхній лівий
+							</label>
+						</div>
+						<div class="form-check">
+							<input type="color" name="exampleRadios" id="TopRight" value="#ff0611" onchange="beginning()">
+							<label class="form-check-label" for="rainbowScheme">
+								Верхній правий
+							</label>
+						</div>
+						<div class="form-check">
+							<input type="color" name="exampleRadios" id="BottomLeft" value="#05fd0d" onchange="beginning()">
+							<label class="form-check-label" for="lightScheme">
+								Нижній лівий
+							</label>
+						</div>
+						<div class="form-check">
+							<input type="color" name="exampleRadios" id="BottomRight" value="#0d17ff" onchange="beginning()">
+							<label class="form-check-label" for="darkScheme">
+								Нижній правий
+							</label>
+						</div>
+						<br />
+					</div>
+                    
+				</div>
+				<!-- Button trigger modal -->
+				<button type="button" class="btn rounded-pill" data-toggle="modal" data-target="#helpUserModal" style="border: 2px solid red; color:black;">
+					Допомога
+				</button>
+				<button type="button" class="btn rounded-pill" onclick="location.href='../index.html'" style="border: 2px solid red; color:black;">
+					&#9664; Назад
+				</button>
+    		</div>
+    		<div id="canvasDiv" class="col-md-8 card card-body bg-light">
+    		</div>
+    	</div>
+	</div>
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="helpUserModal" tabindex="-1" role="dialog" aria-labelledby="helpUserModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+			<h5 class="modal-title" id="helpUserModal">Фрактал Плазма</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			</div>
+			<div class="modal-body">
+				Стохастичні фрактали виходять в тому випадку, коли в ітераційному процесі випадковим чином міняти які-небудь його параметри.
+				Плазма – найвідоміший стохастичний фрактал у якому колір пікселю змінюється на випадкове значення.
+			</div>
+			<div class="modal-footer">
+
+			</div>
+		</div>
+		</div>
+	</div>
+
+
+	<script language="javascript" type="text/javascript" src="plazma.js"></script>
+</body>
+</html>

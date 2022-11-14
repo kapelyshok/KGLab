@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Julia Set</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<!-- Google Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+	<!-- JQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.min.js"></script>
+	<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+
+    	
+        <br>
+
+    	<div class="row">
+    		<div class="col-md-4 card card-body bg-light">
+
+    			<button type="button" onclick="location.href='plazma.html';" class="btn red rounded-pill">
+    				Плазма
+    			</button>
+    			<button type="button" class="btn rounded-pill disabled" style="background: #252525;color:white;">
+    				Броунівський рух
+				</button>
+				<div class="container bg-light">
+					<div class="row ">
+						<div class="col bg-light h6">
+							Колірна схема фракталу
+						</div>
+					</div>
+					<div style=" vertical-align:central; margin-top:15px;">
+						<input type="text" name="exampleRadios" id="iterationsCount" value="5000" onchange="begin()">
+						<label class="form-check-label" for="monochromeScheme">
+							Кількість ітерацій
+						</label>
+					</div>
+					<br />
+					
+				</div>
+
+				<!-- Button trigger modal -->
+				<button type="button" class="btn rounded-pill" data-toggle="modal" data-target="#helpUserModal" style="border: 2px solid red; color:black;">
+					Допомога
+				</button>
+				<button type="button" class="btn rounded-pill" onclick="location.href='../index.html'" style="border: 2px solid red; color:black;">
+					&#9664; Назад
+				</button>
+    		</div>
+    		<div id="canvasDiv" class="col-md-8 card card-body bg-light">
+    		</div>
+    	</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="helpUserModal" tabindex="-1" role="dialog" aria-labelledby="helpUserModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+			<h5 class="modal-title" id="helpUserModal">Фрактал Броунівський Рух</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			</div>
+			<div class="modal-body">
+				Броунівський рух — невпорядкований, хаотичний рух частинки під дією нерівномірних ударів молекул речовини з різних боків у розчинах.
+				Цей шаблон руху зазвичай складається з випадкових коливань положення частинки у просторі.
+			</div>
+			<div class="modal-footer">
+			</div>
+		</div>
+		</div>
+	</div>
+
+
+  <script src="brownian.js"></script>
+</body>
+
+</html>
